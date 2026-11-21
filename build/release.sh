@@ -33,6 +33,14 @@ git commit -m "Materialized Linux $VERSION
 Verified: UEFI+BIOS QEMU boot to exposed QML shell with applications running;
 local unit suites green. See docs/ALPHA-0.2.md and docs/releases/." || echo "Nothing new to commit."
 git tag -f "v$VERSION"
-git push -u origin main
-git push -f origin "v$VERSION"
+# GitHub credentials live in the Windows Credential Manager; prefer Windows
+# Git for the push when available, falling back to the WSL git.
+WIN_GIT="/mnt/c/Program Files/Git/cmd/git.exe"
+if [ -x "$WIN_GIT" ]; then
+    GIT_TERMINAL_PROMPT=0 "$WIN_GIT" push -u origin main
+    GIT_TERMINAL_PROMPT=0 "$WIN_GIT" push -f origin "v$VERSION"
+else
+    git push -u origin main
+    git push -f origin "v$VERSION"
+fi
 printf 'Released %s as %s <%s>\n' "$VERSION" "$NAME" "$EMAIL"
