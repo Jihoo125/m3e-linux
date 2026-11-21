@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(MaterializedSettings LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_AUTOMOC ON)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick DBus)
+add_executable(matsettings main.cpp system_settings.cpp system_settings.hpp)
+qt_add_resources(matsettings resources PREFIX /matsettings FILES Main.qml)
+target_link_libraries(matsettings PRIVATE Qt6::Core Qt6::Gui Qt6::Qml Qt6::Quick Qt6::DBus)

@@ -1,0 +1,21 @@
+{
+  "disk": "/dev/sda",
+  "disk_size_bytes": 128849018880,
+  "firmware": "uefi",
+  "filesystem": {
+    "root": "ext4",
+    "separate_home": false
+  },
+  "swapfile_mib": 4096,
+  "source": "/cdrom/filesystem.squashfs",
+  "hostname": "materialized",
+  "locale": "en_US.UTF-8",
+  "timezone": "Europe/London",
+  "keyboard": "us",
+  "user": {
+    "name": "iris",
+    "full_name": "Iris Example",
+    "password": "replace-this-in-your-private-answer"
+  },
+  "destructive": false
+}

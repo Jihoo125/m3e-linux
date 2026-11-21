@@ -1,0 +1,4 @@
+module Materialized
+plugin m3plugin
+classname MaterializedPlugin
+prefer :/Materialized/

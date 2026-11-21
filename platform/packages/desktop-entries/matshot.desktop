@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Materialized Screenshot
+GenericName=Screenshot Tool
+Comment=Capture the screen via the compositor's screencopy protocol
+Exec=matshot
+Icon=camera-photo
+Terminal=false
+Categories=Graphics;Utility;Materialized;

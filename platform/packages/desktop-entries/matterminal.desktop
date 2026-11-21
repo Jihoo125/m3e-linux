@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Materialized Terminal
+GenericName=Terminal
+Comment=A real PTY terminal with Material 3
+Exec=matterminal
+Icon=utilities-terminal
+Terminal=false
+Categories=System;TerminalEmulator;Materialized;

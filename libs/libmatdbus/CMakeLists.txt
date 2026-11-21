@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+set(CMAKE_AUTOMOC ON)
+find_package(Qt6 REQUIRED COMPONENTS Core DBus)
+add_library(matdbus STATIC dbus.cpp dbus.hpp)
+target_include_directories(matdbus PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(matdbus PUBLIC Qt6::Core Qt6::DBus)
+target_compile_features(matdbus PUBLIC cxx_std_20)

@@ -1,0 +1,411 @@
+{
+  "formatVersion": 1,
+  "name": "Material 3 colour roles",
+  "reference": "https://m3.material.io/styles/color/roles",
+  "variants": [
+    "content",
+    "expressive",
+    "fidelity",
+    "monochrome",
+    "neutral",
+    "tonal-spot",
+    "vibrant"
+  ],
+  "palettes": {
+    "primary": {
+      "0": "#000000",
+      "10": "#21005D",
+      "20": "#381E72",
+      "30": "#4F378B",
+      "40": "#6750A4",
+      "80": "#D0BCFF",
+      "90": "#EADDFF",
+      "100": "#FFFFFF"
+    },
+    "secondary": {
+      "10": "#1D192B",
+      "20": "#332D41",
+      "30": "#4A4458",
+      "40": "#625B71",
+      "80": "#CCC2DC",
+      "90": "#E8DEF8",
+      "100": "#FFFFFF"
+    },
+    "tertiary": {
+      "10": "#31111D",
+      "20": "#492532",
+      "30": "#633B48",
+      "40": "#7D5260",
+      "80": "#EFB8C8",
+      "90": "#FFD8E4",
+      "100": "#FFFFFF"
+    },
+    "error": {
+      "10": "#410E0B",
+      "20": "#601410",
+      "30": "#8C1D18",
+      "40": "#B3261E",
+      "80": "#F2B8B5",
+      "90": "#F9DEDC",
+      "100": "#FFFFFF"
+    },
+    "neutral": {
+      "0": "#000000",
+      "4": "#0F0D13",
+      "6": "#141218",
+      "10": "#1D1B20",
+      "12": "#211F26",
+      "17": "#2B2930",
+      "20": "#322F35",
+      "22": "#36343B",
+      "24": "#3B383E",
+      "87": "#DED8E1",
+      "90": "#E6E0E9",
+      "92": "#ECE6F0",
+      "94": "#F3EDF7",
+      "95": "#F5EFF7",
+      "96": "#F7F2FA",
+      "98": "#FEF7FF",
+      "100": "#FFFFFF"
+    },
+    "neutralVariant": {
+      "30": "#49454F",
+      "50": "#79747E",
+      "60": "#938F99",
+      "80": "#CAC4D0",
+      "90": "#E7E0EC"
+    }
+  },
+  "requiredRoles": [
+    "primary",
+    "onPrimary",
+    "primaryContainer",
+    "onPrimaryContainer",
+    "secondary",
+    "onSecondary",
+    "secondaryContainer",
+    "onSecondaryContainer",
+    "tertiary",
+    "onTertiary",
+    "tertiaryContainer",
+    "onTertiaryContainer",
+    "error",
+    "onError",
+    "errorContainer",
+    "onErrorContainer",
+    "background",
+    "onBackground",
+    "surface",
+    "onSurface",
+    "surfaceVariant",
+    "onSurfaceVariant",
+    "outline",
+    "outlineVariant",
+    "shadow",
+    "scrim",
+    "inverseSurface",
+    "inverseOnSurface",
+    "inversePrimary",
+    "surfaceTint",
+    "primaryFixed",
+    "primaryFixedDim",
+    "onPrimaryFixed",
+    "onPrimaryFixedVariant",
+    "secondaryFixed",
+    "secondaryFixedDim",
+    "onSecondaryFixed",
+    "onSecondaryFixedVariant",
+    "tertiaryFixed",
+    "tertiaryFixedDim",
+    "onTertiaryFixed",
+    "onTertiaryFixedVariant",
+    "surfaceDim",
+    "surfaceBright",
+    "surfaceContainerLowest",
+    "surfaceContainerLow",
+    "surfaceContainer",
+    "surfaceContainerHigh",
+    "surfaceContainerHighest"
+  ],
+  "roles": {
+    "primary": {
+      "light": "primary.40",
+      "dark": "primary.80",
+      "description": "High-emphasis key colour for primary actions and selected states."
+    },
+    "onPrimary": {
+      "light": "primary.100",
+      "dark": "primary.20",
+      "description": "Text and icons displayed on primary."
+    },
+    "primaryContainer": {
+      "light": "primary.90",
+      "dark": "primary.30",
+      "description": "Lower-emphasis primary container."
+    },
+    "onPrimaryContainer": {
+      "light": "primary.10",
+      "dark": "primary.90",
+      "description": "Text and icons displayed on primaryContainer."
+    },
+    "secondary": {
+      "light": "secondary.40",
+      "dark": "secondary.80",
+      "description": "Less prominent actions and supporting accents."
+    },
+    "onSecondary": {
+      "light": "secondary.100",
+      "dark": "secondary.20",
+      "description": "Text and icons displayed on secondary."
+    },
+    "secondaryContainer": {
+      "light": "secondary.90",
+      "dark": "secondary.30",
+      "description": "Secondary container colour."
+    },
+    "onSecondaryContainer": {
+      "light": "secondary.10",
+      "dark": "secondary.90",
+      "description": "Text and icons displayed on secondaryContainer."
+    },
+    "tertiary": {
+      "light": "tertiary.40",
+      "dark": "tertiary.80",
+      "description": "Contrasting accent used to balance primary and secondary."
+    },
+    "onTertiary": {
+      "light": "tertiary.100",
+      "dark": "tertiary.20",
+      "description": "Text and icons displayed on tertiary."
+    },
+    "tertiaryContainer": {
+      "light": "tertiary.90",
+      "dark": "tertiary.30",
+      "description": "Tertiary container colour."
+    },
+    "onTertiaryContainer": {
+      "light": "tertiary.10",
+      "dark": "tertiary.90",
+      "description": "Text and icons displayed on tertiaryContainer."
+    },
+    "error": {
+      "light": "error.40",
+      "dark": "error.80",
+      "description": "Errors and destructive actions."
+    },
+    "onError": {
+      "light": "error.100",
+      "dark": "error.20",
+      "description": "Text and icons displayed on error."
+    },
+    "errorContainer": {
+      "light": "error.90",
+      "dark": "error.30",
+      "description": "Error container colour."
+    },
+    "onErrorContainer": {
+      "light": "error.10",
+      "dark": "error.90",
+      "description": "Text and icons displayed on errorContainer."
+    },
+    "background": {
+      "light": "neutral.98",
+      "dark": "neutral.6",
+      "description": "Legacy background role; new components should use surface."
+    },
+    "onBackground": {
+      "light": "neutral.10",
+      "dark": "neutral.90",
+      "description": "Legacy text and icon role for background."
+    },
+    "surface": {
+      "light": "neutral.98",
+      "dark": "neutral.6",
+      "description": "Default surface for windows and components."
+    },
+    "onSurface": {
+      "light": "neutral.10",
+      "dark": "neutral.90",
+      "description": "Primary text and icons on surface roles."
+    },
+    "surfaceVariant": {
+      "light": "neutralVariant.90",
+      "dark": "neutralVariant.30",
+      "description": "Legacy variant surface; prefer a surfaceContainer role."
+    },
+    "onSurfaceVariant": {
+      "light": "neutralVariant.30",
+      "dark": "neutralVariant.80",
+      "description": "Secondary text and icons on surfaces."
+    },
+    "outline": {
+      "light": "neutralVariant.50",
+      "dark": "neutralVariant.60",
+      "description": "Important boundaries such as text-field outlines."
+    },
+    "outlineVariant": {
+      "light": "neutralVariant.80",
+      "dark": "neutralVariant.30",
+      "description": "Decorative dividers and low-emphasis boundaries."
+    },
+    "shadow": {
+      "light": "neutral.0",
+      "dark": "neutral.0",
+      "description": "Elevation shadow colour; apply opacity at the renderer."
+    },
+    "scrim": {
+      "light": "neutral.0",
+      "dark": "neutral.0",
+      "description": "Modal scrim colour; apply opacity at the renderer."
+    },
+    "inverseSurface": {
+      "light": "neutral.20",
+      "dark": "neutral.90",
+      "description": "Surface that contrasts with the surrounding mode."
+    },
+    "inverseOnSurface": {
+      "light": "neutral.95",
+      "dark": "neutral.20",
+      "description": "Text and icons displayed on inverseSurface."
+    },
+    "inversePrimary": {
+      "light": "primary.80",
+      "dark": "primary.40",
+      "description": "Primary action colour on inverseSurface."
+    },
+    "surfaceTint": {
+      "light": "primary.40",
+      "dark": "primary.80",
+      "description": "Tint used by elevated surfaces and compatible widgets."
+    },
+    "primaryFixed": {
+      "light": "primary.90",
+      "dark": "primary.90",
+      "description": "Mode-independent primary fixed colour."
+    },
+    "primaryFixedDim": {
+      "light": "primary.80",
+      "dark": "primary.80",
+      "description": "Dimmer mode-independent primary fixed colour."
+    },
+    "onPrimaryFixed": {
+      "light": "primary.10",
+      "dark": "primary.10",
+      "description": "Text and icons on primaryFixed and primaryFixedDim."
+    },
+    "onPrimaryFixedVariant": {
+      "light": "primary.30",
+      "dark": "primary.30",
+      "description": "Secondary text and icons on primary fixed colours."
+    },
+    "secondaryFixed": {
+      "light": "secondary.90",
+      "dark": "secondary.90",
+      "description": "Mode-independent secondary fixed colour."
+    },
+    "secondaryFixedDim": {
+      "light": "secondary.80",
+      "dark": "secondary.80",
+      "description": "Dimmer mode-independent secondary fixed colour."
+    },
+    "onSecondaryFixed": {
+      "light": "secondary.10",
+      "dark": "secondary.10",
+      "description": "Text and icons on secondaryFixed and secondaryFixedDim."
+    },
+    "onSecondaryFixedVariant": {
+      "light": "secondary.30",
+      "dark": "secondary.30",
+      "description": "Secondary text and icons on secondary fixed colours."
+    },
+    "tertiaryFixed": {
+      "light": "tertiary.90",
+      "dark": "tertiary.90",
+      "description": "Mode-independent tertiary fixed colour."
+    },
+    "tertiaryFixedDim": {
+      "light": "tertiary.80",
+      "dark": "tertiary.80",
+      "description": "Dimmer mode-independent tertiary fixed colour."
+    },
+    "onTertiaryFixed": {
+      "light": "tertiary.10",
+      "dark": "tertiary.10",
+      "description": "Text and icons on tertiaryFixed and tertiaryFixedDim."
+    },
+    "onTertiaryFixedVariant": {
+      "light": "tertiary.30",
+      "dark": "tertiary.30",
+      "description": "Secondary text and icons on tertiary fixed colours."
+    },
+    "surfaceDim": {
+      "light": "neutral.87",
+      "dark": "neutral.6",
+      "description": "Dimmest surface in the active mode."
+    },
+    "surfaceBright": {
+      "light": "neutral.98",
+      "dark": "neutral.24",
+      "description": "Brightest surface in the active mode."
+    },
+    "surfaceContainerLowest": {
+      "light": "neutral.100",
+      "dark": "neutral.4",
+      "description": "Lowest-emphasis surface container."
+    },
+    "surfaceContainerLow": {
+      "light": "neutral.96",
+      "dark": "neutral.10",
+      "description": "Low-emphasis surface container."
+    },
+    "surfaceContainer": {
+      "light": "neutral.94",
+      "dark": "neutral.12",
+      "description": "Default surface container."
+    },
+    "surfaceContainerHigh": {
+      "light": "neutral.92",
+      "dark": "neutral.17",
+      "description": "High-emphasis surface container."
+    },
+    "surfaceContainerHighest": {
+      "light": "neutral.90",
+      "dark": "neutral.22",
+      "description": "Highest-emphasis surface container."
+    }
+  },
+  "contrastPairs": [
+    {"foreground": "onPrimary", "background": "primary", "minimum": 4.5, "required": true},
+    {"foreground": "onPrimaryContainer", "background": "primaryContainer", "minimum": 4.5, "required": true},
+    {"foreground": "onSecondary", "background": "secondary", "minimum": 4.5, "required": true},
+    {"foreground": "onSecondaryContainer", "background": "secondaryContainer", "minimum": 4.5, "required": true},
+    {"foreground": "onTertiary", "background": "tertiary", "minimum": 4.5, "required": true},
+    {"foreground": "onTertiaryContainer", "background": "tertiaryContainer", "minimum": 4.5, "required": true},
+    {"foreground": "onError", "background": "error", "minimum": 4.5, "required": true},
+    {"foreground": "onErrorContainer", "background": "errorContainer", "minimum": 4.5, "required": true},
+    {"foreground": "onBackground", "background": "background", "minimum": 4.5, "required": true},
+    {"foreground": "onSurface", "background": "surface", "minimum": 4.5, "required": true},
+    {"foreground": "onSurfaceVariant", "background": "surfaceVariant", "minimum": 4.5, "required": true},
+    {"foreground": "inverseOnSurface", "background": "inverseSurface", "minimum": 4.5, "required": true},
+    {"foreground": "onPrimaryFixed", "background": "primaryFixed", "minimum": 4.5, "required": true},
+    {"foreground": "onPrimaryFixed", "background": "primaryFixedDim", "minimum": 4.5, "required": true},
+    {"foreground": "onPrimaryFixedVariant", "background": "primaryFixed", "minimum": 4.5, "required": true},
+    {"foreground": "onPrimaryFixedVariant", "background": "primaryFixedDim", "minimum": 4.5, "required": true},
+    {"foreground": "onSecondaryFixed", "background": "secondaryFixed", "minimum": 4.5, "required": true},
+    {"foreground": "onSecondaryFixed", "background": "secondaryFixedDim", "minimum": 4.5, "required": true},
+    {"foreground": "onSecondaryFixedVariant", "background": "secondaryFixed", "minimum": 4.5, "required": true},
+    {"foreground": "onSecondaryFixedVariant", "background": "secondaryFixedDim", "minimum": 4.5, "required": true},
+    {"foreground": "onTertiaryFixed", "background": "tertiaryFixed", "minimum": 4.5, "required": true},
+    {"foreground": "onTertiaryFixed", "background": "tertiaryFixedDim", "minimum": 4.5, "required": true},
+    {"foreground": "onTertiaryFixedVariant", "background": "tertiaryFixed", "minimum": 4.5, "required": true},
+    {"foreground": "onTertiaryFixedVariant", "background": "tertiaryFixedDim", "minimum": 4.5, "required": true},
+    {"foreground": "onSurface", "background": "surfaceContainerLowest", "minimum": 4.5, "required": true},
+    {"foreground": "onSurface", "background": "surfaceContainerLow", "minimum": 4.5, "required": true},
+    {"foreground": "onSurface", "background": "surfaceContainer", "minimum": 4.5, "required": true},
+    {"foreground": "onSurface", "background": "surfaceContainerHigh", "minimum": 4.5, "required": true},
+    {"foreground": "onSurface", "background": "surfaceContainerHighest", "minimum": 4.5, "required": true},
+    {"foreground": "outline", "background": "surface", "minimum": 3.0, "required": false},
+    {"foreground": "primary", "background": "surface", "minimum": 3.0, "required": false},
+    {"foreground": "error", "background": "surface", "minimum": 3.0, "required": false}
+  ]
+}

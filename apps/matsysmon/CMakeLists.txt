@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(MaterializedSystemMonitor LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_AUTOMOC ON)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick)
+add_executable(matsysmon main.cpp process_model.cpp process_model.hpp)
+qt_add_resources(matsysmon resources PREFIX /matsysmon FILES Main.qml)
+target_link_libraries(matsysmon PRIVATE Qt6::Core Qt6::Gui Qt6::Qml Qt6::Quick)

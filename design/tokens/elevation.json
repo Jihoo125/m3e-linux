@@ -1,0 +1,43 @@
+{
+  "formatVersion": 1,
+  "name": "Material 3 elevation",
+  "reference": "https://m3.material.io/styles/elevation/tokens",
+  "unit": "dp",
+  "levels": {
+    "level0": 0,
+    "level1": 1,
+    "level2": 3,
+    "level3": 6,
+    "level4": 8,
+    "level5": 12
+  },
+  "shadowColorRole": "shadow",
+  "scrimColorRole": "scrim",
+  "shadows": {
+    "level0": [],
+    "level1": [
+      {"x": 0, "y": 1, "blur": 2, "spread": 0, "opacity": 0.3},
+      {"x": 0, "y": 1, "blur": 3, "spread": 1, "opacity": 0.15}
+    ],
+    "level2": [
+      {"x": 0, "y": 1, "blur": 2, "spread": 0, "opacity": 0.3},
+      {"x": 0, "y": 2, "blur": 6, "spread": 2, "opacity": 0.15}
+    ],
+    "level3": [
+      {"x": 0, "y": 1, "blur": 3, "spread": 0, "opacity": 0.3},
+      {"x": 0, "y": 4, "blur": 8, "spread": 3, "opacity": 0.15}
+    ],
+    "level4": [
+      {"x": 0, "y": 2, "blur": 3, "spread": 0, "opacity": 0.3},
+      {"x": 0, "y": 6, "blur": 10, "spread": 4, "opacity": 0.15}
+    ],
+    "level5": [
+      {"x": 0, "y": 4, "blur": 4, "spread": 0, "opacity": 0.3},
+      {"x": 0, "y": 8, "blur": 12, "spread": 6, "opacity": 0.15}
+    ]
+  },
+  "notes": [
+    "Offsets and blur values are in dp; opacity is applied to shadowColorRole.",
+    "Elevation tint uses surfaceTint where the toolkit supports it."
+  ]
+}

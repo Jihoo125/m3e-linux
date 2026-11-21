@@ -1,0 +1,45 @@
+{
+  "formatVersion": 1,
+  "name": "Material 3 shape",
+  "reference": "https://m3.material.io/styles/shape/corner-radius-scale",
+  "unit": "dp",
+  "corners": {
+    "none": 0,
+    "extraSmall": 4,
+    "small": 8,
+    "medium": 12,
+    "large": 16,
+    "extraLarge": 28,
+    "full": -1
+  },
+  "fullSentinel": {
+    "value": -1,
+    "meaning": "Half of the shorter side, not a literal negative radius"
+  },
+  "aliases": {
+    "extraSmallTop": {
+      "topLeft": "extraSmall",
+      "topRight": "extraSmall",
+      "bottomLeft": "none",
+      "bottomRight": "none"
+    },
+    "largeTop": {
+      "topLeft": "large",
+      "topRight": "large",
+      "bottomLeft": "none",
+      "bottomRight": "none"
+    },
+    "largeEnd": {
+      "topLeft": "none",
+      "topRight": "large",
+      "bottomLeft": "none",
+      "bottomRight": "large"
+    },
+    "extraLargeTop": {
+      "topLeft": "extraLarge",
+      "topRight": "extraLarge",
+      "bottomLeft": "none",
+      "bottomRight": "none"
+    }
+  }
+}

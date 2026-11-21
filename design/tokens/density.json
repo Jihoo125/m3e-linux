@@ -1,0 +1,52 @@
+{
+  "formatVersion": 1,
+  "name": "Materialized Linux density and layout",
+  "unit": "dp",
+  "modes": {
+    "comfortable": {
+      "controlHeight": 40,
+      "buttonHeight": 40,
+      "listItemHeight": 56,
+      "twoLineListItemHeight": 72,
+      "navigationRailWidth": 80,
+      "touchTarget": 48,
+      "iconButtonTarget": 48
+    },
+    "compact": {
+      "controlHeight": 32,
+      "buttonHeight": 32,
+      "listItemHeight": 48,
+      "twoLineListItemHeight": 64,
+      "navigationRailWidth": 72,
+      "touchTarget": 48,
+      "iconButtonTarget": 40
+    }
+  },
+  "spacing": {
+    "none": 0,
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "xxl": 32
+  },
+  "padding": {
+    "compactControlHorizontal": 12,
+    "controlHorizontal": 16,
+    "buttonHorizontal": 24,
+    "card": 16,
+    "dialog": 24,
+    "listItemHorizontal": 16,
+    "navigationItemHorizontal": 12
+  },
+  "breakpoints": {
+    "compact": {"minimum": 0, "maximum": 599},
+    "medium": {"minimum": 600, "maximum": 839},
+    "expanded": {"minimum": 840}
+  },
+  "accessibility": {
+    "minimumTouchTarget": 48,
+    "note": "Compact visuals must retain a 48 dp touch target on touch devices."
+  }
+}

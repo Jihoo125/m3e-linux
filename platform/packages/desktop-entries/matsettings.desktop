@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Materialized Settings
+GenericName=System Settings
+Comment=Appearance, networking and system configuration
+Exec=matsettings
+Icon=matsettings
+Terminal=false
+Categories=Settings;System;Materialized;

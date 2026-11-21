@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Materialized System Monitor
+GenericName=System Monitor
+Comment=Live process, CPU and memory information
+Exec=matsysmon
+Icon=matsysmon
+Terminal=false
+Categories=System;Monitor;Materialized;

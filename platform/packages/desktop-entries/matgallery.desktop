@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Materialized Design Gallery
+GenericName=Design System
+Comment=Material 3 controls and live palette preview
+Exec=matgallery
+Icon=matgallery
+Terminal=false
+Categories=Development;Materialized;
+NoDisplay=false

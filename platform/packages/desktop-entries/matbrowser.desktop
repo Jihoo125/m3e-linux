@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Materialized Browser
+GenericName=Web Browser
+Comment=Firefox ESR with a generated Material 3 chrome
+Exec=matbrowser %u
+Icon=firefox-esr
+Terminal=false
+Categories=Network;WebBrowser;Materialized;
+MimeType=text/html;x-scheme-handler/http;x-scheme-handler/https;

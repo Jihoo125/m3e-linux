@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Materialized Calculator
+GenericName=Calculator
+Comment=Material 3 arithmetic calculator
+Exec=matcalc
+Icon=matcalc
+Terminal=false
+Categories=Utility;Calculator;Materialized;

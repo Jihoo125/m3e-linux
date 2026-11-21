@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Materialized Calendar
+GenericName=Calendar
+Comment=Month view with persistent local events
+Exec=matcal
+Icon=x-office-calendar
+Terminal=false
+Categories=Office;Calendar;Materialized;

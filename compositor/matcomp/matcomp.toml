@@ -1,0 +1,37 @@
+# matcomp example configuration. Pass --config PATH or install to
+# ~/.config/materialized/matcomp.toml.
+# The packaged live-session configuration uses DRM. For nested development,
+# pass --headless or use a separate configuration with backend = "auto".
+# Values in the user file override values in /etc/materialized/matcomp.toml.
+# Command-line options override both.
+
+[compositor]
+# auto: use wlroots' environment-selected backend (DRM/KMS when appropriate,
+#       nested Wayland/X11 when a parent session is available).
+# headless: create an in-memory output; no monitor or hardware input is used.
+# drm: force DRM/KMS + libinput (requires a DRM device and seat permissions).
+backend = "drm"
+
+[output]
+# Size of the output created by --backend headless (or backend = "headless").
+width = 1280
+height = 720
+
+# Physical output mode selection. "auto" uses the preferred mode.
+# A custom mode is sent to wlroots with wlr_output_set_custom_mode().
+# Examples: "1920x1080" or "1920x1080@60".
+mode = "auto"
+
+[window]
+# Layout-coordinate gap used by snap and maximize geometries.
+gap = 8
+
+[input]
+# Empty fields use libxkbcommon's environment/defaults.
+xkb_layout = ""
+xkb_model = ""
+xkb_variant = ""
+xkb_options = ""
+repeat_rate = 25
+repeat_delay = 600
+focus_follows_mouse = false

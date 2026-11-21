@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Materialized Text Editor
+GenericName=Text Editor
+Comment=Edit plain text with Material 3
+Exec=mattext
+Icon=mattext
+Terminal=false
+Categories=Utility;TextEditor;Materialized;

@@ -1,0 +1,38 @@
+{
+  "formatVersion": 1,
+  "name": "Materialized Linux iconography",
+  "reference": "Material Symbols geometry, independently drawn Materialized glyphs",
+  "unit": "dp",
+  "grid": {
+    "size": 24,
+    "keyline": 2,
+    "contentSize": 20,
+    "cornerRadius": 2,
+    "strokeWidth": 2,
+    "strokeCap": "round",
+    "strokeJoin": "round"
+  },
+  "sizes": [16, 20, 22, 24, 32, 48, 64],
+  "exportSizes": [16, 22, 24, 32, 48, 64],
+  "variants": {
+    "outlined": {"strokeWidth": 2},
+    "filled": {"strokeWidth": 0},
+    "symbolic": {"strokeWidth": 2, "colorRole": "onSurfaceVariant"}
+  },
+  "stateLayers": {
+    "hover": {"foregroundOpacity": 0.08},
+    "focus": {"foregroundOpacity": 0.12},
+    "pressed": {"foregroundOpacity": 0.12},
+    "dragged": {"foregroundOpacity": 0.16},
+    "disabled": {"foregroundOpacity": 0.38, "containerOpacity": 0.12}
+  },
+  "defaultColorRole": "onSurfaceVariant",
+  "activeColorRole": "onSecondaryContainer",
+  "disabledColorRole": "onSurface",
+  "fallbackTheme": "hicolor",
+  "naming": {
+    "fullColor": "{name}.svg",
+    "symbolic": "{name}-symbolic.svg",
+    "constraint": "lowercase kebab-case Freedesktop icon names"
+  }
+}

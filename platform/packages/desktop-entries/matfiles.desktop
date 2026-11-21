@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Materialized Files
+GenericName=File Manager
+Comment=Browse and manage files with Material 3
+Exec=matfiles
+Icon=matfiles
+Terminal=false
+Categories=System;FileTools;FileManager;Materialized;

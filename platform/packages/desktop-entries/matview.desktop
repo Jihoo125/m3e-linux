@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Materialized Images
+GenericName=Image Viewer
+Comment=Browse and view images with Material 3
+Exec=matview %f
+Icon=image-x-generic
+Terminal=false
+Categories=Graphics;Viewer;Materialized;
+MimeType=image/png;image/jpeg;image/webp;image/bmp;image/gif;
