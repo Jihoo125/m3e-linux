@@ -35,19 +35,40 @@ adding the rest of the distribution.
 | M3 Expressive motion physics | Implemented + unit-tested | `M3Theme.spring()` (spatial under-damped, effects critical), `ctest --test-dir build/qml` (`m3theme`) |
 | Expressive shape morph + emphasized type | Implemented | M3Button/M3Switch spring morphs, `M3Theme.fontEmphasized()`, `M3Label.emphasized` |
 | Expressive color variant end-to-end | Implemented | Settings → Appearance → Color style; `matsessiond` `SetVariant`; scheme JSON `variant` |
-| Terminal (real PTY + VT emulator) | Implemented + tests | `apps/matterminal`, `ctest` matterminal; runs in VM via autostart |
+| Terminal (real PTY + VT emulator) | Implemented + tests | `apps/matterminal`, `ctest` matterminal; runs in VM via Ctrl+Alt+T |
 | Image viewer | Implemented | `apps/matview`; Wayland client smoke test |
 | Screenshot tool | Implemented | `apps/matshot` + `wlr_screencopy_manager_v1` in matcomp |
 | Calendar with persistent events | Implemented + tests | `apps/matcal`, `ctest` matcal (JSON persistence) |
 | Firefox ESR browser + Material chrome | Implemented, runs in VM | `matbrowser` wrapper, `firefox-userChrome.css` artifact; guest watchdog shows `firefox-esr` pid |
-| XDG autostart + launch hotkeys | Implemented | `ApplicationModel::launchAutostart()`; Ctrl+Alt+T / Ctrl+Alt+B |
-| UEFI/BIOS acceptance with apps running | Passed 2026-11-21 | `build/vm/apps-uefi.png`, `build/vm/apps-bios.png`; watchdog process list |
+| XDG autostart + launch hotkeys | Implemented | `ApplicationModel::launchAutostart()` (mechanism); Ctrl+Alt+T / Ctrl+Alt+B; 0.2.0 demo entries removed in 0.2.1 |
+| UEFI/BIOS acceptance with typed input + apps | Passed 2026-11-21 (0.2.1) | `build/vm/input-uefi.png`, `input-bios.png` (typed command executed), `apps-uefi.png`, `apps-bios.png` |
 
-ISO SHA-256 for Alpha 0.2.0:
+ISO SHA-256 for Alpha 0.2.0 (superseded):
 `c7956d6895a15d6449f14e6e73b22b0c7549f31e54400458ad087b518b10a574`.
 Every release is committed and pushed to
 https://github.com/Jihoo125/m3e-linux.git as `Qwen4-Max wooo <jihoo125@j1t.xyz>`
 via `build/release.sh`.
+
+## Input & cursor correctness — released as Alpha 0.2.1 (2026-11-21)
+
+Fixes for the VMware Workstation Pro 25H2 report (no cursor, dead keyboard,
+unwanted auto-opened apps):
+
+- The libinput backend was never created (`WLR_BACKENDS` overwritten to `drm`
+  only); now `drm,libinput`, with per-device serial logging.
+- Newly mapped windows take keyboard focus (`View::on_map` → `focus_view`);
+  previously hotkey/launcher apps received no keystrokes at all.
+- Software cursors are locked per output so the pointer is composited into the
+  frame on every virtual GPU; xcursor theme load failures are logged.
+- The 0.2.0 demo autostart (terminal + Firefox) is removed; apps open only on
+  user action (launcher, Ctrl+Alt+T / Ctrl+Alt+B).
+- Acceptance types a real command into the terminal and gates on its serial
+  output, in both UEFI and BIOS QEMU; VMware Workstation boot + input verified
+  via `vmrun` + VNC remote display (`build/test-vmware.ps1`).
+
+ISO SHA-256 for Alpha 0.2.1 (current):
+`c5d2b42c33d477f3a6480614822d8b98aadb05869f5f062afad469ebc1d73886`.
+Release checklist: `docs/ALPHA-0.2.1.md`.
 
 ## Next milestone — system integration
 

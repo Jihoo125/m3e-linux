@@ -1,6 +1,8 @@
 # Alpha 0.2.0 release checklist
 
 **Released:** 2026-11-21 · supersedes Alpha 0.1 (`ALPHA-0.1.md`).
+**Superseded by Alpha 0.2.1** (`ALPHA-0.2.1.md`): the demo autostart below was
+removed and the input/cursor defects fixed; keep this file as the 0.2.0 record.
 
 Alpha 0.2.0 = the verified Alpha 0.1 base **plus** the Material 3 Expressive
 layer, four new real applications, Firefox ESR with generated Material chrome,

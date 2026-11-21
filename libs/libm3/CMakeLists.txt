@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(MaterializedColor VERSION 0.2.0 LANGUAGES CXX)
+project(MaterializedColor VERSION 0.2.1 LANGUAGES CXX)
 set(CMAKE_CXX_EXTENSIONS OFF)
 add_library(m3 STATIC
   src/color_utils.cpp

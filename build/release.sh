@@ -30,8 +30,9 @@ fi
 git add -A
 git commit -m "Materialized Linux $VERSION
 
-Verified: UEFI+BIOS QEMU boot to exposed QML shell with applications running;
-local unit suites green. See docs/ALPHA-0.2.md and docs/releases/." || echo "Nothing new to commit."
+Verified: UEFI+BIOS QEMU boot to exposed QML shell with end-to-end typed input;
+local unit suites green. See the docs/ALPHA-*.md release checklists and
+docs/releases/ for evidence and ISO hashes." || echo "Nothing new to commit."
 git tag -f "v$VERSION"
 # GitHub credentials live in the Windows Credential Manager; prefer Windows
 # Git for the push when available, falling back to the WSL git.

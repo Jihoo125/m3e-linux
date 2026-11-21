@@ -39,6 +39,7 @@ build/*.txt
 build/*.json
 
 # Local runtime / editor noise
+opencode.json
 *.swp
 *~
 .vscode/

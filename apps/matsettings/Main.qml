@@ -102,7 +102,7 @@ ApplicationWindow {
                 Column {
                     anchors.fill: parent; anchors.margins: 32; spacing: 24
                     M3.M3Label { text: qsTr("About"); scale: "headlineMedium" }
-                    M3.M3Label { text: qsTr("Materialized Linux 0.2.0"); scale: "titleLarge" }
+                    M3.M3Label { text: qsTr("Materialized Linux 0.2.1"); scale: "titleLarge" }
                     M3.M3Label { text: settings.operatingSystem; scale: "bodyLarge" }
                     M3.M3Label { text: qsTr("Linux %1").arg(settings.kernel); scale: "bodyMedium" }
                     M3.M3Label { text: qsTr("Material 3 desktop built with Qt 6 and wlroots."); scale: "bodyMedium" }

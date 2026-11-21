@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 
 project(MaterializedLinux
-  VERSION 0.2.0
+  VERSION 0.2.1
   DESCRIPTION "Materialized Linux — a Material 3 desktop distribution"
   LANGUAGES C CXX)
 

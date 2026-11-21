@@ -60,6 +60,8 @@ void PtySession::onReadable()
 void PtySession::send(const QByteArray &data)
 {
     if (!running() || data.isEmpty()) return;
+    if (qEnvironmentVariableIsSet("MAT_DEBUG_INPUT"))
+        fprintf(stderr, "matterminal: pty send %s\n", data.toHex().constData());
     ssize_t offset = 0;
     while (offset < data.size()) {
         const ssize_t n = ::write(m_fd, data.constData() + offset, static_cast<size_t>(data.size() - offset));

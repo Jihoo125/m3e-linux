@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 
 if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-  project(matinstall-core VERSION 0.2.0 LANGUAGES CXX)
+  project(matinstall-core VERSION 0.2.1 LANGUAGES CXX)
 endif()
 
 option(MATINSTALL_BUILD_TESTS "Build dependency-free matinstall-core unit tests" ${PROJECT_IS_TOP_LEVEL})

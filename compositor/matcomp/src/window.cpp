@@ -71,6 +71,9 @@ void View::on_map() {
     place({x, y, 0, 0});
     restore_box = server.view_box(*this);
     server.update_workspaces();
+    // A newly mapped window takes keyboard focus. Without this, hotkey- or
+    // launcher-started apps never receive keystrokes (click-to-focus only).
+    server.focus_view(*this);
     if (auto* output = server.primary_output(); output && !wlr_output_is_headless(output->raw))
         wlr_output_schedule_frame(output->raw);
 }

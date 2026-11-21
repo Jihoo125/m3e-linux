@@ -133,15 +133,54 @@ else
     echo 'No desktop screenshot was captured.' >&2
     exit 1
 fi
-# Launch real applications through compositor hotkeys and capture them:
-# Ctrl+Alt+T opens the PTY terminal, Ctrl+Alt+B opens Firefox ESR.
+# Launch real applications through compositor hotkeys (Ctrl+Alt+T terminal,
+# Ctrl+Alt+B browser), then prove input works: type into the terminal and move
+# the pointer so the cursor is visible. No demo autostart is used.
 if [ -S "$MONITOR" ] && command -v socat >/dev/null 2>&1; then
-    printf 'sendkey ctrl-alt-t\n' | socat - "UNIX-CONNECT:$MONITOR" >/dev/null || true
+    mon() { printf '%s\n' "$1" | socat - "UNIX-CONNECT:$MONITOR" >/dev/null || true; }
+    type_str() {
+        local s="$1" i c
+        for ((i = 0; i < ${#s}; i++)); do
+            c="${s:$i:1}"
+            case "$c" in
+                ' ') c=spc ;; '-') c=minus ;; '.') c=dot ;; '/') c=slash ;; '_') c=shift-minus ;;
+                '>') c=shift-dot ;;
+                [A-Z]) c="shift-$(printf '%s' "$c" | tr '[:upper:]' '[:lower:]')" ;;
+            esac
+            mon "sendkey $c 30"
+            sleep 0.05
+        done
+    }
+    grep -a -q 'matcomp: input device' "$LOG" || {
+        echo 'No input devices were created by the compositor (libinput missing?).' >&2
+        exit 1
+    }
+    mon 'sendkey ctrl-alt-t'
     sleep 5
-    printf 'sendkey ctrl-alt-b\n' | socat - "UNIX-CONNECT:$MONITOR" >/dev/null || true
-    sleep 60
+    # End-to-end input proof: the typed command writes its result to the serial
+    # console, so acceptance can gate on real keystrokes reaching a real shell.
+    type_str 'echo input-ok > /dev/ttyS0'
+    mon 'sendkey ret'
+    sleep 2
+    mon 'mouse_move 60 40'
+    mon 'mouse_move 20 10'
+    sleep 1
+    INPUT_SHOT="$OUT_DIR/input-$MODE.ppm"
+    mon "screendump $INPUT_SHOT"
+    sleep 1
+    if [ -s "$INPUT_SHOT" ]; then
+        python3 "$ROOT/build/ppm2png.py" "$INPUT_SHOT" "${INPUT_SHOT%.ppm}.png"
+        printf 'Input screenshot captured: %s\n' "${INPUT_SHOT%.ppm}.png"
+    fi
+    if ! grep -a -q '^input-ok' "$LOG"; then
+        echo 'Typed command did not reach the shell (serial has no input-ok).' >&2
+        exit 1
+    fi
+    printf 'Keyboard input verified end-to-end (typed command executed).\n'
+    mon 'sendkey ctrl-alt-b'
+    sleep 45
     APPS="$OUT_DIR/apps-$MODE.ppm"
-    printf 'screendump %s\n' "$APPS" | socat - "UNIX-CONNECT:$MONITOR" >/dev/null || true
+    mon "screendump $APPS"
     sleep 1
     if [ -s "$APPS" ]; then
         python3 "$ROOT/build/ppm2png.py" "$APPS" "${APPS%.ppm}.png"

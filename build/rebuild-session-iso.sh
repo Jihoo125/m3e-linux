@@ -13,6 +13,10 @@ cp -a /var/tmp/materialized-iso/session-root/usr/share/applications/. "$CHROOT/u
 cp -a /var/tmp/materialized-iso/session-root/usr/lib/systemd/user/. "$CHROOT/usr/lib/systemd/user/"
 cp -a /var/tmp/materialized-iso/session-root/usr/share/backgrounds/. "$CHROOT/usr/share/backgrounds/"
 mkdir -p "$CHROOT/etc/xdg/autostart"
-cp -a /var/tmp/materialized-iso/session-root/etc/xdg/autostart/. "$CHROOT/etc/xdg/autostart/"
+rm -f "$CHROOT/etc/xdg/autostart/materialized-terminal.desktop" \
+      "$CHROOT/etc/xdg/autostart/materialized-browser.desktop"
+if [ -d /var/tmp/materialized-iso/session-root/etc/xdg/autostart ]; then
+    cp -a /var/tmp/materialized-iso/session-root/etc/xdg/autostart/. "$CHROOT/etc/xdg/autostart/"
+fi
 cp /var/tmp/materialized-iso/session-root/etc/materialized/matcomp.toml "$CHROOT/etc/materialized/matcomp.toml"
 bash "$ROOT/build/rebuild-diagnostic-iso.sh"

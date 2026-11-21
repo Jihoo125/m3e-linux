@@ -18,7 +18,7 @@ Legend: `[x]` implemented and verified · `[~]` in progress · `[ ]` not started
 
 ## Alpha 0.1 release blockers (all passed 2026-11-19)
 
-- [x] Produce `build/iso/materialized-0.1.0-amd64.iso` with the actual session.
+- [x] Produce `build/iso/materialized-0.2.1-amd64.iso` with the actual session.
 - [x] Boot the ISO in QEMU and capture the serial session marker (UEFI).
 - [x] Boot the ISO in QEMU and capture the serial session marker (BIOS).
 - [x] Capture a VM screenshot and inspect it for a usable desktop.
@@ -34,6 +34,8 @@ Legend: `[x]` implemented and verified · `[~]` in progress · `[ ]` not started
 - [x] Calendar with persistent events (`matcal`, unit tests).
 - [x] Firefox ESR packaged; `matbrowser` wrapper with generated M3 chrome.
 - [x] XDG autostart and Ctrl+Alt+T / Ctrl+Alt+B launch hotkeys.
+- [x] 0.2.1: libinput backend, focus-on-map, software cursors; demo autostart removed.
+- [x] 0.2.1: UEFI+BIOS acceptance types a real command and gates on serial output.
 - [x] UEFI + BIOS acceptance with terminal and Firefox running in the guest
       (watchdog process list + `build/vm/apps-*.png`).
 

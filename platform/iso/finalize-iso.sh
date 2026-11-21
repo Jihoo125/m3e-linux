@@ -5,7 +5,7 @@
 set -euo pipefail
 ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)"
 WORK="${MAT_ISO_WORK:-/var/tmp/materialized-iso}"
-OUT="${MAT_ISO_OUTPUT:-$ROOT/build/iso/materialized-0.2.0-amd64.iso}"
+OUT="${MAT_ISO_OUTPUT:-$ROOT/build/iso/materialized-0.2.1-amd64.iso}"
 CHROOT="$WORK/chroot"
 BINARY="$WORK/binary"
 
@@ -125,7 +125,7 @@ cp "$EFI_IMAGE" "$BINARY/efiboot.img"
 xorriso -as mkisofs \
     -iso-level 3 -full-iso9660-filenames -joliet -rational-rock \
     -volid MATERIALIZED_0_2 \
-    -appid "Materialized Linux 0.2.0" \
+    -appid "Materialized Linux 0.2.1" \
     -publisher "Materialized Linux contributors" \
     -output "$OUT" \
     -c boot.catalog \

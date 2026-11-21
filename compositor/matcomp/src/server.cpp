@@ -82,7 +82,8 @@ void Server::initialize() {
     cursor_ = wlr_cursor_create();
     wlr_cursor_attach_output_layout(cursor_, layout_);
     cursor_manager_ = wlr_xcursor_manager_create(nullptr, 24);
-    wlr_xcursor_manager_load(cursor_manager_, 1);
+    if (!wlr_xcursor_manager_load(cursor_manager_, 1))
+        std::cerr << "matcomp: WARNING xcursor theme failed to load (no visible cursor)\n";
     seat_ = wlr_seat_create(display_, "seat0");
     if (!seat_) throw std::runtime_error("cannot create seat");
     xkb_context_ = {xkb_context_new(XKB_CONTEXT_NO_FLAGS), xkb_context_unref};
@@ -130,7 +131,9 @@ void Server::create_backend() {
     if (config_.backend == BackendPreference::Headless) {
         backend_ = wlr_headless_backend_create(display_);
     } else {
-        if (config_.backend == BackendPreference::Drm) setenv("WLR_BACKENDS", "drm", 1);
+        // The DRM backend alone creates NO input devices. libinput must be
+        // requested explicitly or the session has no keyboard/pointer at all.
+        if (config_.backend == BackendPreference::Drm) setenv("WLR_BACKENDS", "drm,libinput", 1);
         backend_ = wlr_backend_autocreate(display_);
     }
     if (!backend_) throw std::runtime_error("cannot create wlroots backend (try --headless)");
@@ -212,6 +215,10 @@ void Server::add_output(wlr_output* raw) {
     if (!wlr_output_is_headless(raw)) {
         if (!wlr_output_init_render(raw, allocator_, renderer_))
             throw std::runtime_error("cannot initialize output rendering");
+        // The pixman renderer composites everything in software; hardware
+        // cursor planes are invisible to screen capture and vary per virtual
+        // GPU. Lock software cursors so the pointer is always in the frame.
+        wlr_output_lock_software_cursors(raw, true);
         wlr_output_enable(raw, true);
         if (!wlr_output_commit(raw))
             wlr_log(WLR_ERROR, "initial output commit failed for %s", raw->name ? raw->name : "unknown");
@@ -227,6 +234,8 @@ void Server::add_output(wlr_output* raw) {
 }
 
 void Server::add_input(wlr_input_device* device) {
+    std::cout << "matcomp: input device type=" << device->type
+              << " name=" << (device->name ? device->name : "unknown") << '\n';
     if (device->type == WLR_INPUT_DEVICE_KEYBOARD) {
         keyboards_.push_back(std::make_unique<Keyboard>(*this, device));
         wlr_seat_set_capabilities(seat_, WL_SEAT_CAPABILITY_KEYBOARD | WL_SEAT_CAPABILITY_POINTER);
@@ -374,6 +383,9 @@ void Server::move_to_workspace(View& view, int workspace) {
 
 void Server::focus_view(View& view, wlr_surface* surface) {
     if (!view.mapped || view.workspace != current_workspace_) return;
+    if (std::getenv("MAT_DEBUG_INPUT"))
+        std::cout << "matcomp: keyboard focus -> "
+                  << (view.surface->toplevel->title ? view.surface->toplevel->title : "untitled") << '\n';
     focused_ = &view;
     focused_layer_ = nullptr;
     wlr_scene_node_raise_to_top(&view.tree->node);

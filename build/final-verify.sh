@@ -18,5 +18,5 @@ printf '== core apps ==\n'
 bash build/build-core-apps.sh > /var/tmp/apps.log 2>&1
 grep -E 'Test #|tests passed' /var/tmp/apps.log || true
 printf '== final ISO ==\n'
-cat build/iso/materialized-0.2.0-amd64.iso.sha256
-sha256sum -c build/iso/materialized-0.2.0-amd64.iso.sha256
+cat build/iso/materialized-0.2.1-amd64.iso.sha256
+sha256sum -c build/iso/materialized-0.2.1-amd64.iso.sha256

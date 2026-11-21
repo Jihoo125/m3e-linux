@@ -5,7 +5,7 @@ cd "$ROOT"
 rm -f build/vm/debug-uefi.log /var/tmp/materialized-debug-monitor.sock /var/tmp/materialized-debug-screen.ppm
 qemu-system-x86_64 \
     -machine q35,accel=kvm -cpu host -m 2048 -smp 2 \
-    -cdrom build/iso/materialized-0.2.0-amd64.iso -boot d \
+    -cdrom build/iso/materialized-0.2.1-amd64.iso -boot d \
     -display none -serial file:build/vm/debug-uefi.log \
     -monitor unix:/var/tmp/materialized-debug-monitor.sock,server=on,wait=off \
     -device virtio-vga -device virtio-rng-pci -no-reboot -no-shutdown \

@@ -8,7 +8,7 @@ mkdir -p "$RT"
 MON="$RT/monitor.sock"; SER="$RT/serial.sock"; LOG="$ROOT/build/vm/browserdbg.log"
 rm -f "$MON" "$SER" "$LOG"
 qemu-system-x86_64 -machine q35,accel=kvm -cpu host -m 3072 -smp 2 \
-    -cdrom "$ROOT/build/iso/materialized-0.2.0-amd64.iso" -boot d -display none \
+    -cdrom "$ROOT/build/iso/materialized-0.2.1-amd64.iso" -boot d -display none \
     -chardev "socket,id=serial0,path=$SER,server=on,wait=off" -serial chardev:serial0 \
     -monitor "unix:$MON,server=on,wait=off" \
     -device virtio-vga -device virtio-rng-pci -no-reboot -no-shutdown \

@@ -91,6 +91,9 @@ Keyboard::Keyboard(Server& owner, wlr_input_device* input) : server(owner), devi
 
     key.connect(device->keyboard->events.key, [this](void* data) {
         auto* event = static_cast<wlr_event_keyboard_key*>(data);
+        if (std::getenv("MAT_DEBUG_INPUT"))
+            std::cout << "matcomp: key keycode=" << event->keycode
+                      << " state=" << event->state << '\n';
         const uint32_t keycode = event->keycode + 8;
         const xkb_keysym_t* keysyms = nullptr;
         const int count = xkb_state_key_get_syms(device->keyboard->xkb_state, keycode, &keysyms);

@@ -6,7 +6,7 @@
 # Run from the repository root: sudo bash platform/iso/build.sh [--minimal]
 set -euo pipefail
 ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)"
-OUT="${MAT_ISO_OUTPUT:-$ROOT/build/iso/materialized-0.2.0-amd64.iso}"
+OUT="${MAT_ISO_OUTPUT:-$ROOT/build/iso/materialized-0.2.1-amd64.iso}"
 WORK="${MAT_ISO_WORK:-/var/tmp/materialized-iso}"
 BUILD_ROOT="${MAT_BUILD_ROOT:-$ROOT/build}"
 MIRROR="${MAT_DEBIAN_MIRROR:-http://deb.debian.org/debian}"

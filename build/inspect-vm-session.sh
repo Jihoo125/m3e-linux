@@ -4,7 +4,7 @@ ROOT=/mnt/c/Users/iris8/Downloads/yes
 cd "$ROOT"
 rm -f /var/tmp/materialized-debug-monitor.sock /var/tmp/materialized-debug-screen.ppm build/vm/debug-uefi.log
 qemu-system-x86_64 -machine q35,accel=kvm -cpu host -m 2048 -smp 2 \
-    -cdrom build/iso/materialized-0.2.0-amd64.iso -boot d -display none \
+    -cdrom build/iso/materialized-0.2.1-amd64.iso -boot d -display none \
     -serial file:build/vm/debug-uefi.log \
     -monitor unix:/var/tmp/materialized-debug-monitor.sock,server=on,wait=off \
     -device virtio-vga -device virtio-rng-pci -no-reboot -no-shutdown \

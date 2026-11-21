@@ -108,7 +108,7 @@ The script:
    PipeWire, Mesa and the required Qt/wlroots libraries.
 3. Installs the live user/session configuration and GRUB UEFI/BIOS boot entries.
 4. Produces a squashfs root and a hybrid ISO at
-   `build/iso/materialized-0.2.0-amd64.iso` with SHA-256 metadata.
+   `build/iso/materialized-0.2.1-amd64.iso` with SHA-256 metadata.
 
 The ISO work directory is `/var/tmp/materialized-iso` because Windows-mounted
 `/mnt/c` cannot host Linux device nodes. Override with `MAT_ISO_WORK` on a Linux
@@ -121,8 +121,8 @@ Boxes/virt-manager, UTM), including the graphics/firmware requirements and a
 verified-vs-untested matrix, see [`RUNNING-ON-VMS.md`](RUNNING-ON-VMS.md).
 
 ```bash
-bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.0-amd64.iso --mode uefi
-bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.0-amd64.iso --mode bios
+bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.1-amd64.iso --mode uefi
+bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.1-amd64.iso --mode bios
 ```
 
 The harness waits for the `Materialized session started` marker from the loaded

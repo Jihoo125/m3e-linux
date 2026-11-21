@@ -2,15 +2,16 @@
 
 **A Material 3 desktop distribution for x86_64 Intel and AMD computers.**
 
-> **Status (2026-11-21): Alpha 0.2.0 released.** The verified Alpha 0.1 base
-> plus real Material 3 Expressive (spring motion, shape morphing, emphasized
-> type, Expressive variant), four new applications (terminal, image viewer,
-> screenshot, calendar) and Firefox ESR with generated Material chrome. The
-> Debian 13 live ISO boots to the visible QML desktop in both UEFI and BIOS
-> QEMU, with the terminal and Firefox launched through real XDG autostart
-> (`build/vm/apps-uefi.png`, `build/vm/apps-bios.png`).
-> ISO SHA-256: `c7956d6895a15d6449f14e6e73b22b0c7549f31e54400458ad087b518b10a574`.
-> Release checklist: [`docs/ALPHA-0.2.md`](docs/ALPHA-0.2.md).
+> **Status (2026-11-21): Alpha 0.2.1 released.** Correctness release on top of
+> 0.2.0: real keyboard/pointer input everywhere (the libinput backend was never
+> created), keyboard focus for newly mapped windows, a visible software cursor
+> on every virtual GPU, and removal of the 0.2.0 demo autostart — apps now open
+> only via the launcher or Ctrl+Alt+T / Ctrl+Alt+B. The Debian 13 live ISO boots
+> to the visible QML desktop in both UEFI and BIOS QEMU with end-to-end
+> typed-input proof (`build/vm/input-uefi.png`, `build/vm/input-bios.png`), and
+> boots on VMware Workstation Pro 25H2 (`build/vm/vmware-desktop.png`).
+> ISO SHA-256: `c5d2b42c33d477f3a6480614822d8b98aadb05869f5f062afad469ebc1d73886`.
+> Release checklist: [`docs/ALPHA-0.2.1.md`](docs/ALPHA-0.2.1.md).
 > The complete distribution described in the roadmap is **not** finished: the
 > music player, software center, full Settings coverage, lock screen, and the
 > graphical installer wizard are still in progress.
@@ -178,8 +179,8 @@ sudo bash platform/iso/build.sh
 The output is:
 
 ```text
-build/iso/materialized-0.2.0-amd64.iso
-build/iso/materialized-0.2.0-amd64.iso.sha256
+build/iso/materialized-0.2.1-amd64.iso
+build/iso/materialized-0.2.1-amd64.iso.sha256
 ```
 
 The live environment uses a `materialized` account with password `materialized`.
@@ -190,8 +191,8 @@ for recovery.
 ## Test in QEMU
 
 ```bash
-bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.0-amd64.iso --mode uefi
-bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.0-amd64.iso --mode bios
+bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.1-amd64.iso --mode uefi
+bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.1-amd64.iso --mode bios
 ```
 
 The harness writes serial logs and screenshots to `build/vm/`. It checks that

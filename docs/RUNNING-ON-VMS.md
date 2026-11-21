@@ -1,6 +1,6 @@
 # Running Materialized Linux on VM hypervisors
 
-**Applies to:** `materialized-0.2.0-amd64.iso` (Alpha 0.2.0) and later.
+**Applies to:** `materialized-0.2.1-amd64.iso` (Alpha 0.2.1) and later.
 **Status key:** ✅ verified by the project's acceptance harness · 🧪 expected to
 work from driver/architecture analysis, not yet exercised by the harness.
 
@@ -36,7 +36,7 @@ cp /usr/share/OVMF/OVMF_VARS_4M.fd ./OVMF_VARS.fd
 
 qemu-system-x86_64 \
   -machine q35,accel=kvm -cpu host -m 3072 -smp 2 \
-  -cdrom materialized-0.2.0-amd64.iso -boot d \
+  -cdrom materialized-0.2.1-amd64.iso -boot d \
   -drive if=pflash,format=raw,readonly=on,file=/usr/share/OVMF/OVMF_CODE_4M.fd \
   -drive if=pflash,format=raw,file=./OVMF_VARS.fd \
   -device virtio-vga -device virtio-rng-pci \
@@ -107,7 +107,7 @@ VBoxManage modifyvm materialized --memory 3072 --cpus 2 --ioapic on \
   --graphicscontroller vmsvga --vram 128 --firmware efi   # or: --firmware bios
 VBoxManage storagectl materialized --name IDE --add ide
 VBoxManage storageattach materialized --storagectl IDE --port 0 --device 0 \
-  --type dvddrive --medium materialized-0.2.0-amd64.iso
+  --type dvddrive --medium materialized-0.2.1-amd64.iso
 VBoxManage startvm materialized
 ```
 
@@ -133,7 +133,7 @@ svga.vramSize = "134217728"       # 128 MB
 mks.enable3d = "FALSE"            # software rendering; 3D not needed
 ethernet0.virtualDev = "e1000e"
 cdrom0.imageType = "cdrom-image"
-cdrom0.fileName = "materialized-0.2.0-amd64.iso"
+cdrom0.fileName = "materialized-0.2.1-amd64.iso"
 cdrom0.startConnected = "TRUE"
 ```
 
@@ -158,7 +158,7 @@ New-VM -Name materialized -Generation 2 -MemoryStartupBytes 3GB `
   -SwitchName "Default Switch"
 Set-VMProcessor -VMName materialized -Count 2
 Set-VMFirmware  -VMName materialized -EnableSecureBoot Off      # unsigned GRUB
-Add-VMDvdDrive  -VMName materialized -Path .\materialized-0.2.0-amd64.iso
+Add-VMDvdDrive  -VMName materialized -Path .\materialized-0.2.1-amd64.iso
 $dvd = Get-VMDvdDrive -VMName materialized
 Set-VMFirmware  -VMName materialized -FirstBootDevice $dvd
 Start-VM        -VMName materialized
@@ -229,7 +229,8 @@ image. Parallels Desktop on Apple Silicon runs ARM guests only and therefore
 - **Autologin:** tty1 starts the session automatically; no login needed.
 - **Credentials (recovery TTYs):** `materialized` / `materialized`.
 - **Hotkeys:** `Ctrl+Alt+T` terminal, `Ctrl+Alt+B` Firefox ESR (Material-themed
-  chrome). XDG autostart also launches both at session start.
+  chrome). Apps open only on user action (launcher or hotkeys); the 0.2.0 demo
+  autostart was removed in 0.2.1.
 - **Recovery:** `Ctrl+Alt+F2` … `F6` give login TTYs; the GRUB "safe graphics"
   entry (`nomodeset`) is a *recovery shell only* — with `nomodeset` there is no
   DRM output, so the desktop intentionally does not start.
@@ -250,6 +251,7 @@ image. Parallels Desktop on Apple Silicon runs ARM guests only and therefore
 | Black screen but serial shows `Materialized session started` | Capture taken before first modeset, or wrong display device | Wait a few seconds; re-capture; verify video model. |
 | Firefox exits immediately in a restrictive sandbox | User namespaces blocked by the hypervisor/guest policy | The live `matbrowser` wrapper already relaxes the content sandbox for evaluation; check `/tmp/matbrowser.log` in a recovery TTY. |
 | Only 1024×768 resolution | Compositor picks the connector's preferred mode | Expected for the alpha; mode selection is on the roadmap. |
+| Dead keyboard/pointer or invisible cursor on 0.2.0 | libinput backend missing; no focus-on-map; hardware cursor planes | Fixed in 0.2.1 — use the 0.2.1 ISO. |
 
 ## 9. Verification matrix
 
@@ -259,7 +261,7 @@ image. Parallels Desktop on Apple Silicon runs ARM guests only and therefore
 | QEMU q35 + KVM | BIOS (SeaBIOS) | virtio-vga | ✅ harness-passed 2026-11-21 |
 | QEMU q35 + TCG | UEFI / BIOS | virtio-vga | ✅ same image, slow path |
 | VirtualBox 7.x | EFI or BIOS | VMSVGA, 3D off | 🧪 untested |
-| VMware Workstation/Player/Fusion (Intel) | EFI or BIOS | SVGA II, 3D off | 🧪 untested |
+| VMware Workstation/Player/Fusion (Intel) | EFI or BIOS | SVGA II, 3D off | ✅ 0.2.1 boot + VNC hotkey input verified 2026-11-21 (Workstation Pro 25H2); typed-text gate 🧪 (serial flush on hard stop) |
 | Hyper-V Gen 2, Secure Boot off | UEFI | hyperv_drm | 🧪 untested |
 | GNOME Boxes / virt-manager | UEFI | virtio video | 🧪 untested |
 | UTM (Apple Silicon, emulate x86_64) | UEFI | virtio-gpu-pci | 🧪 untested, slow |
@@ -268,6 +270,6 @@ image. Parallels Desktop on Apple Silicon runs ARM guests only and therefore
 Reproduce the verified rows with:
 
 ```bash
-bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.0-amd64.iso --mode uefi
-bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.0-amd64.iso --mode bios
+bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.1-amd64.iso --mode uefi
+bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.1-amd64.iso --mode bios
 ```

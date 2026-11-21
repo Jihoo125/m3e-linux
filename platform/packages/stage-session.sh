@@ -96,24 +96,6 @@ PREFS
 exec firefox-esr --profile "$PROFILE" --no-remote "$@"
 EOF
 
-install -Dm644 /dev/stdin "$STAGING/etc/xdg/autostart/materialized-terminal.desktop" <<'EOF'
-[Desktop Entry]
-Type=Application
-Name=Materialized Terminal
-Exec=matterminal
-OnlyShowIn=Materialized;
-X-Materialized-Autostart=alpha-demo
-EOF
-
-install -Dm644 /dev/stdin "$STAGING/etc/xdg/autostart/materialized-browser.desktop" <<'EOF'
-[Desktop Entry]
-Type=Application
-Name=Materialized Browser
-Exec=matbrowser
-OnlyShowIn=Materialized;
-X-Materialized-Autostart=alpha-demo
-EOF
-
 install -Dm644 /dev/stdin "$STAGING/usr/lib/systemd/user/matsessiond.service" <<'EOF'
 [Unit]
 Description=Materialized appearance and wallpaper service
@@ -161,6 +143,8 @@ export QT_QUICK_CONTROLS_STYLE="${QT_QUICK_CONTROLS_STYLE:-Basic}"
 # buffers, not GPU dmabufs, or surfaces map but never appear on screen.
 export QT_QUICK_BACKEND="${QT_QUICK_BACKEND:-software}"
 export LIBGL_ALWAYS_SOFTWARE="${LIBGL_ALWAYS_SOFTWARE:-1}"
+export XCURSOR_THEME="${XCURSOR_THEME:-Adwaita}"
+export XCURSOR_SIZE="${XCURSOR_SIZE:-24}"
 # matcomp is the display server on the live TTY, not a nested Wayland client.
 unset WAYLAND_DISPLAY DISPLAY
 export WLR_BACKENDS="${WLR_BACKENDS:-drm,libinput}"

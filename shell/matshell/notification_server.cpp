@@ -95,7 +95,7 @@ void NotificationAdaptor::GetServerInformation(QString &name, QString &vendor, Q
 {
     name = QStringLiteral("Materialized Notifications");
     vendor = QStringLiteral("Materialized Linux");
-    version = QStringLiteral("0.2.0");
+    version = QStringLiteral("0.2.1");
     specVersion = QStringLiteral("1.2");
 }
 
