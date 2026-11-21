@@ -116,6 +116,10 @@ filesystem, and `MAT_ISO_OUTPUT` to change the output filename.
 
 ## QEMU checks
 
+For running the ISO on other hypervisors (VirtualBox, VMware, Hyper-V, GNOME
+Boxes/virt-manager, UTM), including the graphics/firmware requirements and a
+verified-vs-untested matrix, see [`RUNNING-ON-VMS.md`](RUNNING-ON-VMS.md).
+
 ```bash
 bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.0-amd64.iso --mode uefi
 bash tests/vm/run-qemu.sh --iso build/iso/materialized-0.2.0-amd64.iso --mode bios

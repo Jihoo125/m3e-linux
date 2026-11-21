@@ -65,7 +65,9 @@
 
 The remaining work is tracked in [`docs/ROADMAP.md`](docs/ROADMAP.md) and
 [`docs/TODO.md`](docs/TODO.md). [`docs/DECISIONS.md`](docs/DECISIONS.md) records
-the architecture choices.
+the architecture choices. To run the live ISO on QEMU/KVM, VirtualBox, VMware,
+Hyper-V, GNOME Boxes/virt-manager or UTM, see
+[`docs/RUNNING-ON-VMS.md`](docs/RUNNING-ON-VMS.md).
 
 ## Requirements
 
