@@ -13,7 +13,7 @@ Materialized Linux is alpha software. Only the latest alpha release line receive
 
 **Please do not open a public GitHub issue for security vulnerabilities.**
 
-Email **jihoo125@j1t.xyz** with:
+Email **jihoo125@jihoo125.it.kr** with:
 
 - A description of the issue and its impact.
 - Reproduction steps or a proof of concept.
