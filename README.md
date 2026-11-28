@@ -1,5 +1,70 @@
 # Materialized Linux
 
+<!-- Repository stats -->
+![Stars](https://img.shields.io/github/stars/Jihoo125/m3e-linux?style=flat&logo=github)
+![Forks](https://img.shields.io/github/forks/Jihoo125/m3e-linux?style=flat&logo=github)
+![Watchers](https://img.shields.io/github/watchers/Jihoo125/m3e-linux?style=flat&logo=github)
+![Issues](https://img.shields.io/github/issues/Jihoo125/m3e-linux)
+![Pull Requests](https://img.shields.io/github/issues-pr/Jihoo125/m3e-linux)
+![Last Commit](https://img.shields.io/github/last-commit/Jihoo125/m3e-linux)
+![Commit Activity](https://img.shields.io/github/commit-activity/m/Jihoo125/m3e-linux)
+![Repo Size](https://img.shields.io/github/repo-size/Jihoo125/m3e-linux)
+![Code Size](https://img.shields.io/github/languages/code-size/Jihoo125/m3e-linux)
+![Contributors](https://img.shields.io/github/contributors/Jihoo125/m3e-linux)
+
+<!-- Project info -->
+![License](https://img.shields.io/github/license/Jihoo125/m3e-linux)
+![Version](https://img.shields.io/badge/version-0.2.1-blue)
+![Status](https://img.shields.io/badge/status-alpha-orange)
+![Platform](https://img.shields.io/badge/platform-x86__64-informational)
+![Architecture](https://img.shields.io/badge/architecture-Intel%20%7C%20AMD-blue)
+![OS](https://img.shields.io/badge/OS-Debian%2013-A81D33?logo=debian&logoColor=white)
+![Kernel](https://img.shields.io/badge/kernel-Linux-FCC624?logo=linux&logoColor=black)
+
+<!-- Technologies -->
+![C++](https://img.shields.io/badge/C++-00599C?logo=cplusplus&logoColor=white)
+![Qt](https://img.shields.io/badge/Qt-41CD52?logo=qt&logoColor=white)
+![QML](https://img.shields.io/badge/QML-41CD52?logo=qt&logoColor=white)
+![CMake](https://img.shields.io/badge/CMake-064F8C?logo=cmake&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?logo=gnubash&logoColor=white)
+![Wayland](https://img.shields.io/badge/Wayland-FFBC00?logo=wayland&logoColor=black)
+![wlroots](https://img.shields.io/badge/wlroots-compositor-informational)
+
+<!-- Desktop / design -->
+![Material Design](https://img.shields.io/badge/Material%20Design-757575?logo=materialdesign&logoColor=white)
+![Material You](https://img.shields.io/badge/Material%20You-6750A4)
+![Material 3](https://img.shields.io/badge/Material%203-6750A4)
+![Dynamic Color](https://img.shields.io/badge/dynamic%20color-supported-6750A4)
+![Dark Mode](https://img.shields.io/badge/dark%20mode-supported-222222)
+![Light Mode](https://img.shields.io/badge/light%20mode-supported-FAFAFA?logoColor=black)
+
+<!-- Build / testing -->
+![Build System](https://img.shields.io/badge/build-CMake-064F8C?logo=cmake&logoColor=white)
+![Tests](https://img.shields.io/badge/tests-unit%20%2B%20QEMU-blue)
+![Virtualization](https://img.shields.io/badge/VM-QEMU-FF6600?logo=qemu&logoColor=white)
+![ISO](https://img.shields.io/badge/image-Live%20ISO-informational)
+![UEFI](https://img.shields.io/badge/boot-UEFI-informational)
+![BIOS](https://img.shields.io/badge/boot-BIOS-informational)
+
+<!-- GitHub releases -->
+![Release](https://img.shields.io/github/v/release/Jihoo125/m3e-linux)
+![Latest Release](https://img.shields.io/github/release-date/Jihoo125/m3e-linux)
+![Pre-release](https://img.shields.io/github/v/release/Jihoo125/m3e-linux?include_prereleases)
+![Downloads](https://img.shields.io/github/downloads/Jihoo125/m3e-linux/total)
+
+<!-- Community -->
+![Open Source](https://img.shields.io/badge/open%20source-yes-brightgreen)
+![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen)
+![Issues Welcome](https://img.shields.io/badge/issues-welcome-blue)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
+![Made with Linux](https://img.shields.io/badge/made%20with-Linux-FCC624?logo=linux&logoColor=black)
+![Built Different](https://img.shields.io/badge/built-different-purple)
+![Powered by C++](https://img.shields.io/badge/powered%20by-C++-00599C?logo=cplusplus&logoColor=white)
+![No Telemetry](https://img.shields.io/badge/telemetry-none-success)
+
+<!-- Badge style alternatives: flat | flat-square | plastic | for-the-badge | social -->
+
 **A Material 3 desktop distribution for x86_64 Intel and AMD computers.**
 
 > **Status (2026-11-21): Alpha 0.2.1 released.** Correctness release on top of
